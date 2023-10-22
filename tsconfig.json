@@ -8,9 +8,9 @@
     "baseUrl": "./",
     "paths": {
       "@@/*": [".dumi/tmp/*"],
-      "dumi-ui": ["src"],
-      "dumi-ui/*": ["src/*", "*"]
+      "dumi-ui": ["packages"],
+      "dumi-ui/*": ["packages/*", "*"]
     }
   },
-  "include": [".dumirc.ts", "src/**/*"]
+  "include": [".dumirc.ts", "packages/**/*"]
 }

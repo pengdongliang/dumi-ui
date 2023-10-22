@@ -1,6 +1,10 @@
 import { defineConfig } from 'father';
+import { resolve } from 'path';
 
 export default defineConfig({
-  // more father config: https://github.com/umijs/father/blob/master/docs/config.md
-  esm: { output: 'dist' },
+  esm: {
+    input: 'packages',
+    output: 'dist',
+  },
+  alias: { 'dumi-ui': resolve(__dirname, './packages') },
 });

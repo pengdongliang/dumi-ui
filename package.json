@@ -11,14 +11,17 @@
   "scripts": {
     "build": "father build",
     "build:watch": "father dev",
+    "clean": "pnpm clean:node-modules & rm dist ./pnpm-lock.yaml ./yarn.lock -rf",
+    "clean:node-modules": "find . -name 'node_modules' -type d -prune -exec rm -rf '{}' +",
     "dev": "dumi dev",
     "docs:build": "dumi build",
     "doctor": "father doctor",
     "lint": "npm run lint:es && npm run lint:css",
-    "lint:css": "stylelint \"{src,test}/**/*.{css,less}\"",
-    "lint:es": "eslint \"{src,test}/**/*.{js,jsx,ts,tsx}\"",
+    "lint:css": "stylelint \"{packages,test}/**/*.{css,less}\"",
+    "lint:es": "eslint \"{packages,test}/**/*.{js,jsx,ts,tsx}\"",
     "prepare": "husky install && dumi setup",
     "prepublishOnly": "father doctor && npm run build",
+    "re-install": "pnpm run clean & pnpm install",
     "start": "npm run dev"
   },
   "commitlint": {
